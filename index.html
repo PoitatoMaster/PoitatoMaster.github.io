@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaurya Singh Rawat — Aerospace &amp; UAS Systems Engineer</title>
+<meta name="description" content="Portfolio of Shaurya Singh Rawat — aerospace engineer working on UAS systems, CFD, and hypersonics.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- faint fixed background contour field -->
+<svg class="contour-field" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5fc9d6" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#5fc9d6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M -50 620 C 200 560, 400 700, 650 600 C 900 500, 1000 640, 1250 560" stroke="url(#fade)" stroke-width="1.5" fill="none"/>
+  <path d="M -50 680 C 220 630, 420 760, 660 660 C 920 560, 1010 700, 1250 630" stroke="url(#fade)" stroke-width="1.5" fill="none"/>
+  <path d="M -50 740 C 240 700, 440 820, 670 720 C 940 620, 1020 760, 1250 700" stroke="url(#fade)" stroke-width="1.5" fill="none"/>
+  <path d="M -50 100 C 250 40, 450 150, 700 90 C 950 30, 1050 140, 1250 90" stroke="url(#fade)" stroke-width="1" fill="none"/>
+</svg>
+
+<header class="site-nav">
+  <div class="wrap">
+    <a class="mark" href="#top">SSR<span>.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">≡</button>
+    <nav id="siteNavLinks">
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap" style="border-bottom:1px solid var(--border-soft);">
+    <p class="hero-eyebrow">// aerospace engineer — uas systems &amp; cfd</p>
+    <h1>Shaurya Singh Rawat</h1>
+    <p class="role">Co-founder &amp; Engineering Lead at <strong>Maviyom Aviation</strong>, building fixed-wing VTOL, tethered, and autonomous UAS platforms for defence deployment. Background in CFD, hypersonics, and structural simulation from Cranfield University.</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="assets/Shaurya_Singh_Rawat_CV.pdf" download>Download CV</a>
+      <a class="btn btn-ghost" href="https://github.com/shaurya-rawat01" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="btn btn-ghost" href="mailto:shaurya.dhruv@gmail.com">Email</a>
+    </div>
+
+    <div class="telemetry">
+      <div class="cell">
+        <div class="value">4955 m</div>
+        <div class="label">launch altitude, Ladakh VTOL trials</div>
+      </div>
+      <div class="cell">
+        <div class="value">Mach 5</div>
+        <div class="label">hypersonic inlet buzz, MSc dissertation</div>
+      </div>
+      <div class="cell">
+        <div class="value">+10%</div>
+        <div class="label">downforce gain, Formula Student aero</div>
+      </div>
+      <div class="cell">
+        <div class="value">2024–</div>
+        <div class="label">Maviyom Aviation, Delhi</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="wrap">
+    <div class="section-head">
+      <h2>Experience</h2>
+      <span class="section-index">mission log</span>
+    </div>
+
+    <div class="log">
+      <div class="log-entry">
+        <div class="role-line">
+          <span class="role-title">Co-founder &amp; Engineering Lead</span>
+          <span class="role-meta">Maviyom Aviation — Delhi, India — March 2024 – Present</span>
+        </div>
+        <ul>
+          <li>Led systems integration, field testing, and operational deployment of fixed-wing VTOL, tethered UAS, and autonomous aerial systems during defence and government platform evaluations.</li>
+          <li>Developed and validated a hybrid fixed-wing VTOL ISR platform during high-altitude operations in Ladakh, running flight trials from <span class="readout">~4955 m ASL</span> launch altitude with cruise profiles up to <span class="readout">1000 m AGL</span> to evaluate endurance, failsafe behaviour, and EO target identification.</li>
+          <li>Integrated and ruggedized airborne communications relay payloads onto tethered UAS platforms for sustained <span class="readout">24-hr</span> field operations in <span class="readout">48°C</span> ambient and <span class="readout">&gt;60°C</span> ground-temperature conditions.</li>
+          <li>Developed and demonstrated a fiber-optic-guided loitering munition concept with operator-in-the-loop, real-time guidance, and contested-environment operation during multi-vendor field evaluations.</li>
+          <li>Developed and deployed FPV trainer UAS platforms and operational training labs for Indian MoD end users, integrating airframes, avionics, communications, and support systems for pilot training.</li>
+          <li>Designed custom avionics support hardware and proof-of-concept visual odometry pipelines using KiCAD, onboard computer vision, and autonomous navigation methods.</li>
+        </ul>
+
+        <div class="log-media">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M4 46 L18 24 L26 34 L38 14 L60 46" stroke="#5fc9d6" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+            <circle cx="38" cy="14" r="2.4" fill="#e8a33d"/>
+            <path d="M2 50 H62" stroke="#263039" stroke-width="1.5"/>
+          </svg>
+          <div class="caption">
+            <strong>Placeholder — field trial photo</strong>
+            Swap for a shot from the Ladakh VTOL deployment or ground test.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="wrap">
+    <div class="section-head">
+      <h2>Projects</h2>
+      <span class="section-index">03 selected</span>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="figure">
+          <svg viewBox="0 0 240 150" aria-hidden="true">
+            <rect width="240" height="150" fill="#121a21"/>
+            <path d="M20 20 L120 20 L150 75 L120 130 L20 130 Z" stroke="#2a343e" stroke-width="1.5" fill="none"/>
+            <path d="M120 20 L150 75 L120 130" stroke="#5fc9d6" stroke-width="1.5" fill="none"/>
+            <path d="M60 75 C 90 40, 130 40, 150 75" stroke="#e8a33d" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+            <path d="M60 75 C 90 110, 130 110, 150 75" stroke="#e8a33d" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+            <line x1="20" y1="75" x2="220" y2="75" stroke="#1c252d" stroke-width="1"/>
+          </svg>
+        </div>
+        <p class="tag">MSc Dissertation — ANSYS Fluent, URANS</p>
+        <h3>Hypersonic Inlet Buzz at Mach 5</h3>
+        <p>2D URANS simulations of hypersonic inlet buzz using a k-ω SST model and third-order MUSCL discretisation on a 296k-element structured grid. Open and blocked isolator configurations validated qualitatively against schlieren data.</p>
+        <div class="metrics">
+          <span>1548 Hz / 1444 Hz buzz freq</span>
+          <span>within 6.5% of theory</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="figure">
+          <svg viewBox="0 0 240 150" aria-hidden="true">
+            <rect width="240" height="150" fill="#121a21"/>
+            <ellipse cx="120" cy="75" rx="90" ry="42" stroke="#2a343e" stroke-width="1.5" fill="none"/>
+            <ellipse cx="120" cy="75" rx="60" ry="28" stroke="#5fc9d6" stroke-width="1.2" fill="none"/>
+            <path d="M120 33 C 140 50, 140 100, 120 117" stroke="#e8a33d" stroke-width="1.5" fill="none" stroke-dasharray="2 4"/>
+            <path d="M75 75 C 95 55, 145 55, 165 75" stroke="#1c252d" stroke-width="1"/>
+          </svg>
+        </div>
+        <p class="tag">MSc Group Project — ANSYS System Coupling</p>
+        <h3>Fluid–Structure Interaction of Civil Aircraft During Rapid Decompression</h3>
+        <p>Two-fidelity FSI methodology simulating explosive decompression of an Airbus A320 fuselage, coupling CFD and FEA solvers. Modelled structural response and cabin acoustics across multiple panel layouts and breach sizes, with a grid convergence study validating the framework.</p>
+        <div class="metrics">
+          <span>15 Hz buffeting</span>
+          <span>131–149 dB SPL range</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="figure">
+          <svg viewBox="0 0 240 150" aria-hidden="true">
+            <rect width="240" height="150" fill="#121a21"/>
+            <path d="M30 100 L60 60 L110 55 L150 60 L200 85 L200 100 L30 100 Z" stroke="#2a343e" stroke-width="1.5" fill="none"/>
+            <path d="M30 108 L210 108" stroke="#5fc9d6" stroke-width="1.5"/>
+            <path d="M40 108 L40 118 M90 108 L90 122 M150 108 L150 122 M200 108 L200 118" stroke="#e8a33d" stroke-width="1.2"/>
+          </svg>
+        </div>
+        <p class="tag">Formula Student — STAR-CCM+, SolidWorks</p>
+        <h3>Aerodynamics Lead, Team Defianz Racing</h3>
+        <p>Led the aerodynamics division of a ~30-member team, developing a full aero package — wings, diffuser, and composite bodywork — from CFD concept to race-ready hardware. Transitioned composite manufacturing from wet layup to resin-infusion CFRP.</p>
+        <div class="metrics">
+          <span>+10% downforce coeff.</span>
+          <span>+4% mass only</span>
+          <span>Best FMEA Award</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section id="skills" class="wrap">
+    <div class="section-head">
+      <h2>Skills</h2>
+      <span class="section-index">tools &amp; languages</span>
+    </div>
+
+    <div class="skills-groups">
+      <div class="skills-group">
+        <div class="group-label">CAD &amp; simulation</div>
+        <div class="pill-row">
+          <span class="pill">SolidWorks</span>
+          <span class="pill">ANSYS Fluent</span>
+          <span class="pill">ANSYS Mechanical</span>
+          <span class="pill">STAR-CCM+</span>
+          <span class="pill">ICEM CFD</span>
+          <span class="pill">Abaqus</span>
+          <span class="pill">KiCAD</span>
+        </div>
+      </div>
+      <div class="skills-group">
+        <div class="group-label">Programming</div>
+        <div class="pill-row">
+          <span class="pill">Python</span>
+          <span class="pill">MATLAB</span>
+          <span class="pill">C++</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="wrap">
+    <div class="section-head">
+      <h2>Education</h2>
+      <span class="section-index">record</span>
+    </div>
+
+    <div class="edu-list">
+      <div class="edu-row">
+        <div>
+          <div class="school">Cranfield University</div>
+          <div class="degree">MSc, Aerospace Computational Engineering</div>
+        </div>
+        <div class="date">Sept 2022</div>
+      </div>
+      <div class="edu-row">
+        <div>
+          <div class="school">Delhi Technological University</div>
+          <div class="degree">B.Tech, Mechanical Engineering</div>
+        </div>
+        <div class="date">June 2021</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact" class="wrap">
+  <p class="contact-line">Open to conversations on UAS systems, CFD, and defence engineering work.</p>
+  <div class="links">
+    <a href="mailto:shaurya.dhruv@gmail.com">shaurya.dhruv@gmail.com</a>
+    <a href="https://github.com/shaurya-rawat01" target="_blank" rel="noopener">github.com/shaurya-rawat01</a>
+  </div>
+  <p class="fine-print">Built as a static site — deployed via GitHub Pages.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

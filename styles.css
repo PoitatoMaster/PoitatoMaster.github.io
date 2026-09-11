@@ -1,0 +1,597 @@
+/* ============================================================
+   Design tokens
+   ============================================================ */
+:root {
+  --bg: #0b1014;
+  --bg-panel: #121a21;
+  --bg-panel-2: #1a2530;
+  --border: #263039;
+  --border-soft: #1c252d;
+
+  --text-primary: #e8edf1;
+  --text-secondary: #8fa3b0;
+  --text-tertiary: #56676f;
+
+  --accent-cyan: #5fc9d6;
+  --accent-cyan-dim: #3a7480;
+  --accent-amber: #e8a33d;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-data: 'IBM Plex Mono', monospace;
+
+  --max-width: 920px;
+  --edge: 32px;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--edge);
+}
+
+::selection {
+  background: var(--accent-cyan-dim);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   Background texture — faint contour field, fixed
+   ============================================================ */
+.contour-field {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ============================================================
+   Nav
+   ============================================================ */
+header.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 16, 20, 0.86);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 62px;
+}
+
+.site-nav .mark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  letter-spacing: 0.01em;
+}
+
+.site-nav .mark span {
+  color: var(--accent-cyan);
+}
+
+.site-nav nav {
+  display: flex;
+  gap: 28px;
+}
+
+.site-nav nav a {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  transition: color 0.15s ease;
+  position: relative;
+}
+
+.site-nav nav a:hover,
+.site-nav nav a.active {
+  color: var(--text-primary);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: 4px;
+  width: 38px;
+  height: 34px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  padding: 84px 0 56px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.hero-eyebrow {
+  font-family: var(--font-data);
+  font-size: 0.8rem;
+  color: var(--accent-amber);
+  margin: 0 0 18px;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  line-height: 1.08;
+  font-weight: 600;
+  margin: 0 0 18px;
+  max-width: 14ch;
+}
+
+.hero .role {
+  font-size: 1.08rem;
+  color: var(--text-secondary);
+  max-width: 56ch;
+  margin: 0 0 30px;
+}
+
+.hero .role strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--border);
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--accent-cyan);
+  color: #071013;
+  border-color: var(--accent-cyan);
+}
+
+.btn-primary:hover {
+  background: #7ad6e1;
+}
+
+.btn-ghost {
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent-cyan-dim);
+  color: var(--accent-cyan);
+}
+
+/* Telemetry strip — real figures pulled from the CV, HUD-style readout */
+.telemetry {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.telemetry .cell {
+  padding: 16px 18px;
+  border-right: 1px solid var(--border-soft);
+}
+
+.telemetry .cell:last-child { border-right: none; }
+
+.telemetry .cell .value {
+  font-family: var(--font-data);
+  font-size: 1.3rem;
+  color: var(--accent-cyan);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.telemetry .cell .label {
+  font-size: 0.76rem;
+  color: var(--text-tertiary);
+}
+
+/* ============================================================
+   Section scaffolding
+   ============================================================ */
+section {
+  padding: 72px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.section-head h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section-head .section-index {
+  font-family: var(--font-data);
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+}
+
+/* ============================================================
+   Experience — mission log timeline
+   ============================================================ */
+.log {
+  position: relative;
+  padding-left: 28px;
+  border-left: 1px solid var(--border);
+}
+
+.log-entry {
+  position: relative;
+  padding-bottom: 44px;
+}
+
+.log-entry:last-child { padding-bottom: 0; }
+
+.log-entry::before {
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 4px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent-cyan);
+}
+
+.log-entry .role-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.log-entry .role-title {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 600;
+}
+
+.log-entry .role-meta {
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+}
+
+.log-entry ul {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+}
+
+.log-entry li {
+  margin-bottom: 10px;
+  max-width: 68ch;
+}
+
+.log-entry li::marker {
+  color: var(--accent-cyan-dim);
+}
+
+.log-entry li strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.readout {
+  display: inline-block;
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  color: var(--accent-amber);
+  background: rgba(232, 163, 61, 0.08);
+  border: 1px solid rgba(232, 163, 61, 0.25);
+  border-radius: 3px;
+  padding: 1px 7px;
+  margin-left: 2px;
+}
+
+.log-media {
+  margin-top: 18px;
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-panel);
+}
+
+.log-media svg { width: 56px; height: 56px; flex-shrink: 0; }
+
+.log-media .caption {
+  font-size: 0.82rem;
+  color: var(--text-tertiary);
+}
+
+.log-media .caption strong {
+  display: block;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+/* ============================================================
+   Projects
+   ============================================================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--border-soft);
+  border: 1px solid var(--border-soft);
+}
+
+.project-card {
+  background: var(--bg);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .figure {
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+  background: var(--bg-panel);
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.project-card .figure svg { width: 100%; height: 100%; }
+
+.project-card .tag {
+  font-family: var(--font-data);
+  font-size: 0.72rem;
+  color: var(--text-tertiary);
+  margin-bottom: 8px;
+}
+
+.project-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.project-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin: 0 0 14px;
+}
+
+.project-card .metrics {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.project-card .metrics span {
+  font-family: var(--font-data);
+  font-size: 0.74rem;
+  color: var(--accent-cyan);
+}
+
+.project-card .metrics span::after {
+  content: '';
+}
+
+/* ============================================================
+   Skills
+   ============================================================ */
+.skills-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+.skills-group .group-label {
+  font-family: var(--font-data);
+  font-size: 0.78rem;
+  color: var(--text-tertiary);
+  margin-bottom: 14px;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  font-size: 0.85rem;
+  padding: 6px 13px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text-secondary);
+}
+
+/* ============================================================
+   Education
+   ============================================================ */
+.edu-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
+  padding: 18px 0;
+  border-top: 1px solid var(--border-soft);
+}
+
+.edu-row:last-child { border-bottom: 1px solid var(--border-soft); }
+
+.edu-row .school {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.edu-row .degree {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 3px;
+}
+
+.edu-row .date {
+  font-family: var(--font-data);
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Footer / contact
+   ============================================================ */
+footer {
+  padding: 56px 0 72px;
+}
+
+footer .contact-line {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  max-width: 18ch;
+  margin: 0 0 26px;
+}
+
+footer .links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+footer .links a {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+footer .links a:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan-dim);
+}
+
+footer .fine-print {
+  font-family: var(--font-data);
+  font-size: 0.76rem;
+  color: var(--text-tertiary);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 720px) {
+  :root { --edge: 20px; }
+
+  .site-nav nav {
+    position: fixed;
+    top: 62px;
+    left: 0;
+    right: 0;
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 20px;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  .site-nav nav.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .site-nav nav a {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+
+  .nav-toggle { display: block; }
+
+  .telemetry { grid-template-columns: repeat(2, 1fr); }
+  .telemetry .cell:nth-child(2) { border-right: none; }
+  .telemetry .cell:nth-child(odd) { }
+  .telemetry .cell { border-bottom: 1px solid var(--border-soft); }
+  .telemetry .cell:nth-last-child(-n+2) { border-bottom: none; }
+
+  .hero { padding: 56px 0 40px; }
+  section { padding: 52px 0; }
+}
